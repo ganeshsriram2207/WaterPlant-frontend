@@ -1,22 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <body style ="text-align: center">
-<title>Insert title here</title>
+<title>
+Insert title here</title>
 </head>
 <body>
 <br>
-<h2>Set Available Cans</h2>
+<h2>Set Cans</h2>
+<div class="row justify-content-center" style="margin:0;">
+	<div class="col-md-3 text-center">
+	<br>
 <br>
 <form onsubmit = "list()"> 
-Set Available Cans:<input type="number"name="setvailabecans"id="availablecans"placeholder="set the available cans" required>
-<br>
+<div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   Set Num Of Cans
+                               </div>
+                           </div>
+                           <input type="number" name="name" id="availablecans" class="form-control" placeholder="enter the number of cans" required/>
+                       </div>
+                   </div>
 <br>
 <input type="submit"
            value="Submit" class="btn btn-success">
@@ -25,17 +36,17 @@ Set Available Cans:<input type="number"name="setvailabecans"id="availablecans"pl
        <br /> <a href="index.jsp">Home</a>
 
 </form>
+</div>
+</div>
 <script>
-
-
 function list(){
     
-	alert("login");
+	
 	 event.preventDefault();
 	 var availablecans = document.getElementById("availablecans").value;
 	 var formData = "noOfCans=" + availablecans; 
 	 console.log(formData);
-	 var url="http://localhost:8080/htmlpagee/SetAvailableCans?"+formData;
+	 var url="http://localhost:8080/waterplant_API/Setavailable_Cans?"+formData;
 	 console.log(url);
 	
 	 var formData = {};
@@ -43,12 +54,12 @@ function list(){
 	         console.log(response);
 	         console.log(response.errorMessage);
 	         var msg = JSON.parse(response);
-	         alert(msg);
+	         
 	         if (msg.errorMessage!=null) {
 	           
 	         } else {
 	            
-	             window.location.href = "cansavailable.jsp";
+	             window.location.href = "cansavailable.html";
 	         }
 	});
 	}

@@ -1,19 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<title>Order Cans</title>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<title>ORDER CANS</title>
 </head>
-<h1>Order Cans</h1>
+<br>
+<h1>ORDER CANS</h1>
+<div class="row justify-content-center" style="margin:0;">
+	<div class="col-md-3 text-center">
+	<br>
 <body style ="text-align: center">
-Cans To Be Ordered:<input type="text"name="name"placeholder="enter your number of cans to be ordered" required>
+
 <br>
 <br>
+                    <div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   Order Cans
+                               </div>
+                           </div>
+                           <input type="text" name="name" id="ordercans" class="form-control" placeholder="Enter Number Of Cans" required/>
+                       </div>
+                   </div>
+<!--   Cans To Be Ordered:
+<br>
+<input type="number"name="name"placeholder="enter your number of cans to be ordered" required> -->
+<br>
+<br>
+<script>
+function goBack() {
+	 window.history.back();
+	 }
+</script>
 
-<a href="index.jsp">Log Out</a>
-
+<input type="submit" value="Submit" class="btn btn-success">
+<button type="reset" class="btn btn-primary" value="clear">Clear</button>
+<button onclick="goBack()" class="btn btn-danger">Go Back</button>
+<br>
+<br>
+<a href="index.jsp">Home</a>
 </body>
+</div>
+</div>
 </html>

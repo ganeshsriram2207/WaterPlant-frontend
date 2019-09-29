@@ -1,18 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-<body style ="text-align: center">
-function listDonation(){
+function list(){
     
-var url="http://localhost:8080/htmlpagee/CansAvailableServlet";
+var url="http://localhost:8080/waterplant_API/CansAvailable_Servlet";
 $.getJSON(url,function(response){
     var list = response;
      document.getElementById("tbody").innerHTML="";
@@ -21,6 +19,8 @@ for(let ld of list){
     console.log(list);
     content += "<tr>";
     content += "<td>" + ld.availablecans + "</td>";
+    content += "<td>" + ld.date + "</td>";
+    
     content += "</tr>";
 }
 console.log(content);
@@ -30,8 +30,8 @@ document.getElementById("tbody").innerHTML =  content;
 </script>
 </head>
 <body style ="text-align: center">
-<h2>STOCK AVAILABLE</h2>
-<form onsubmit = "listDonation()"> </form> 
+<h3>CANS AVAILABILITY</h3>
+<form onsubmit = "list()"> </form> 
 <div class="container-fluid">
    <div class="row">
        <div class="col">
@@ -39,29 +39,31 @@ document.getElementById("tbody").innerHTML =  content;
            <table border="1" class="table table-condensed" id="tbl">
                <thead>
                    <tr>
-                       <th>Cans Available</th> 
-                                     
+                       <th>Cans Available</th>
+                       <th>Date and Time</th>
                    </tr>
                </thead>
-               <thead>
-                   <tr>
-                       
-                                     
-                   </tr>
-               </thead>
-               <tbody id="tbody"></tbody>
+               <tbody id="tbody">
+               </tbody>
            </table>
        </div>
    </div>
 </div>
 <script>
-listDonation();
+list();
 </script>
 
 <a href="index.jsp">Home</a>
 <br>
 <br>
-<a href="ordercans.jsp">Order</a>
-</body>
+<script>
+function goBack() {
+	 window.history.back();
+	 }
 
+</script>
+
+<button onclick="goBack()" class="btn btn-danger">Go Back</button>
+<br>
+</body>
 </html>

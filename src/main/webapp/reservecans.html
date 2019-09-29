@@ -1,16 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+<h1>RESERVE CANS</h1>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Reserve Cans</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 </head>
+<body style ="text-align: center">
 <body>
-
-
+<div class="row justify-content-center" style="margin:0;">
+	<div class="col-md-3 text-center">
+<br>
+<br>
+                    <div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   Reserve Cans
+                               </div>
+                           </div>
+                           <input type="text" name="name" id="reservecans" class="form-control" placeholder="Enter Number Of Cans" required/>
+                       </div>
+                   </div>
+<!-- Cans To Be Reserved:<input type="number"name="name"placeholder="enter your number of cans to be reserved" required>  -->
+<br>
+<input type="submit" value="Submit" class="btn btn-success">
+<button type="reset" class="btn btn-primary" value="clear">Clear</button> 
+ <script>
+function goBack() {
+	 window.history.back();
+	 }
+</script>
+<button onclick="goBack()" class="btn btn-danger">Go Back</button>
+<br>
+<br>
+<a href="index.jsp">Home</a>
+</div>
+</div>
 </body>
+
 </html>

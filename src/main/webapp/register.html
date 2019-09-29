@@ -6,31 +6,77 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/jquery-3.4.1.min.js"></script>
-
 <script src="js/bootstrap.min.js"></script>
 
 </head>
 <br>
-<h2>REGISTER LOGIN</h2>
+<h2>USER REGISTER </h2>
+<div class="row justify-content-center" style="margin:0;">
+	<div class="col-md-3 text-center">
 <br>
 <br>
 <body style="text-align: center">
 	<form onsubmit="register()">
-		<label>Username:</label> <input type="text" name="username"
+	<div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   User Name
+                               </div>
+                           </div>
+                           <input type="text" name="name" id="username" class="form-control" placeholder="Enter Your Name" required/>
+                       </div>
+                   </div>
+		<!--  <label>Username:</label> <input type="text" name="username"
 			id="username" placeholder="Enter your username" required autofocus />
-		<br /> <br> <label>Phone Number</label> <input type="text"
+		<br /> <br> -->
+		<div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   Phone Number
+                               </div>
+                           </div>
+                           <input type="text" name="name" id="phonenumber" class="form-control" placeholder="Enter Your PhoneNumber" required/>
+                       </div>
+                   </div>
+		<!--  <label>Phone Number</label> <input type="text"
 			name="phonenumber" id="phonenumber"
-			placeholder="Enter your phone number" required /> <br /> <br>
-		<label>Email_id</label> <input type="text" name="Email_id"
+			placeholder="Enter your phone number" required /> <br /> <br>-->
+			
+			<div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   Email-ID
+                               </div>
+                           </div>
+                           <input type="text" name="name" id="Email_id" class="form-control" placeholder="Enter Your Email-Id" required/>
+                       </div>
+                   </div>
+		<!--<label>Email_id</label> <input type="text" name="Email_id"
 			id="Email_id" placeholder="Enter your Email_id" required /> <br />
-		<br> <label>Password:</label> <input type="password"
+		<br>-->
+		<div class="form-group">
+                       <div class="input-group">
+                           <div class="input-group-prepend">
+                               <div class="input-group-text">
+                                   Password
+                               </div>
+                           </div>
+                           <input type="name" name="name" id="password" class="form-control" placeholder="Enter Your Password" required/>
+                       </div>
+                   </div>
+		
+		 <!--<label>Password:</label> <input type="password"
 			name="password" id="password" placeholder="Enter your Password"
-			required /> <br /> <br> <input type="submit" value="Submit"
-		class="btn btn-success">
-		<button type="reset" class="btn btn-danger" value="clear">clear
-		</button>
-		<br /> <br /> Existing User ? <a href="index.jsp">Login</a> <br /> <a
-			href="index.jsp">Home</a>
+			required /> 
+			<br />-->
+			 <br> <input type="submit" value="Submit"class="btn btn-success">
+		          <button type="reset" class="btn btn-danger" value="clear">clear</button>
+		<br /> 
+		<br> Exsisting User ? <a href="index.jsp">Login</a> <br /> 
+		<a	href="index.jsp">Home</a>
 	</form>
 	<script>
 		function register() {
@@ -43,8 +89,7 @@
 					+ phonenumber + "&Email_id=" + Email_id + "&password="
 					+ password;
 			console.log(formData);
-			var url = "http://localhost:8080/htmlpagee/RegisterServlet?"
-					+ formData;
+			var url = "http://localhost:8080/waterplant_API/Register_Servlet?"+formData;
 			console.log(url);
 			
 			var formData = {};
@@ -52,16 +97,18 @@
 				console.log(response);
 				console.log(response.errorMessage);
 				var msg = JSON.parse(response);
-				alert(msg);
+				
 				if (msg.errorMessage != null) {
 					alert("Invalid Username/Password");
 				} else {
-					alert("register successfull");
-					window.location.href = "userlogin.jsp";
+					alert("Your Details Have Been Registered Successfully");
+					window.location.href = "userlogin.html";
 				}
 
 			});
 		}
 	</script>
+	</div>
+	</div>
 </body>
 </html>

@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +5,12 @@
 
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
 function list(){
     
-var url="http://localhost:8080/htmlpagee/CansAvailableServlet";
+var url="http://localhost:8080/waterplant_API/CansAvailable_Servlet";
 $.getJSON(url,function(response){
     var list = response;
      document.getElementById("tbody").innerHTML="";
@@ -22,6 +19,7 @@ for(let ld of list){
     console.log(list);
     content += "<tr>";
     content += "<td>" + ld.availablecans + "</td>";
+    content += "<td>" + ld.date + "</td>";
     
     content += "</tr>";
 }
@@ -42,7 +40,7 @@ document.getElementById("tbody").innerHTML =  content;
                <thead>
                    <tr>
                        <th>Cans Available</th>
-                       
+                       <th>Date and Time</th>
                    </tr>
                </thead>
                <tbody id="tbody">
@@ -56,6 +54,16 @@ list();
 </script>
 
 <a href="index.jsp">Home</a>
+<br>
+<br>
+<script>
+function goBack() {
+	 window.history.back();
+	 }
+
+</script>
+
+<button onclick="goBack()" class="btn btn-danger">Go Back</button>
 <br>
 </body>
 </html>
